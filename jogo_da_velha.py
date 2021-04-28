@@ -38,9 +38,8 @@ def player_time(body):
             if choice <= 0 or choice >= 10:
                 print('Por favor digite um numero entre 1 e 9 ')
             else:
-                if verify_if_empty_position(choice, body):
-                    run = False
-                    insert_letter('x', choice, body)
+                insert_letter('x', choice, body)
+                run = False
         except:
             print('Por favor digite um numero válido')
 
@@ -52,6 +51,7 @@ def ai_time(body):
         if verify_if_empty_position(choice, body):
             run = False
             insert_letter('o', choice, body)
+            print(f'IA escolhe a posicao {choice}')
 
 
 def verify_if_empty_position(position, body):
@@ -128,5 +128,6 @@ def game():
         if body.count(' ') == 2:
             print('Humm, parece que deu empate')
             play_again()
+
 
 game()
